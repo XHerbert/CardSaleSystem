@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Login</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/login_main.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/login_responsive.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/login_icons.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/login.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/login_awonsome.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="login">
+    <div class="logo">
+        <strong>iSMS</strong>管理系统
+    </div>
+    <div class="box">
+        <div class="content">
+            <form id="niceform" name="niceform" class="form-vertical login-form" action="DoLogin" method="post">
+                <h3 class="form-title">请登录</h3>
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="icon-user"></i>
+                        <input type="text" name="username" class="form-control" placeholder="用户名" autofocus="autofocus" data-rule-required="true" data-msg-required="请输入您的用户名." value="" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="icon-lock"></i>
+                        <input type="password" name="password" class="form-control" placeholder="密码" data-rule-required="true" data-msg-required="请输入您的密码." value="" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="icon-qrcode"></i>
+                        <input value="" id="captcha" name="captcha" class="form-control" placeholder="验证码" maxlength="5" data-rule-required="true" data-msg-required="请输入您的验证码." autocomplete="off" type="text">
+                        <img style="margin-top:5px;margin-left:220px;" id="captchaImage" class="captchaImage" onclick="changeCaptcha();" src="http://sms.iFta.hk/index.php/login/captcha" title="点击更换验证码">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    @*<label class="checkbox pull-left"><input type="checkbox" class="uniform" name="autologin" value="1"> 记住一周登录状态</label>*@
+                    <button type="submit" name="submit" class="submit btn btn-primary pull-right">
+                        登录系统 <i class="icon-angle-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer">技术支持 iSMS</div>
+    <div class="footer">
+        提示： 1、登录密码与iSMS管理系统v7的电脑版本相同<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        2、如系统显示不正常，请把浏览器更新为最新版
+    </div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link rel="stylesheet" href="~/Content/answer.css" />
+    @Styles.Render("~/content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+</head>
+<body>
+
+    <div class="head">
+        <div class="common clearfix">
+            <div class="left clearfix">
+                <a class="logo left"
+                   href="#">
+                    <img alt="" src="~/Img/logo.jpg">
+                </a>
+                <div class="app left">
+                    <p>app</p><span class="down_icon"></span>
+                    <div class="qr_code">
+                        <span class="triangle"></span>
+                        <a>手机扫码快速下载</a><img alt="" src="~/Img/qr_code.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="more left" style="display: none;">
+                    <p class="p_m">更多</p>
+                    <span class="line"></span>
+                    <span class="down"></span>
+                    <div class="cp">
+                        <span class="triangle"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="nav">
+            <div class="common">
+                <p class="home"><a href="#">首页</a>&nbsp;&gt;&nbsp;试卷</p>
+                <h2 class="h2 clearfix">
+                    <p class="h2_p">
+                        2017年江西省公务员录用考试《行测》训练卷（八）
+                    </p>
+                    <p class="time">测试时间：2017年09月19日</p>
+                    <p class="time">作答时长：120分钟</p>
+                </h2>
+            </div>
+        </div>
+        <div class="tag nav-label" id="block_nave" style="opacity: 1;">
+            <ul>
+                <li class=" active" nav-cmd="block5170">
+                    常识判断&nbsp;（<a id="block_5170">0</a>/20）&nbsp;
+                </li>
+                <li class=" " nav-cmd="block5171">
+                    言语理解与表达&nbsp;（<a id="block_5171">0</a>/40）&nbsp;
+                </li>
+                <li class=" " nav-cmd="block5173">
+                    数量关系&nbsp;（<a id="block_5173">0</a>/10）&nbsp;
+                </li>
+                <li class=" " nav-cmd="block5172">
+                    判断推理&nbsp;（<a id="block_5172">0</a>/30）&nbsp;
+                </li>
+                <li class="end " nav-cmd="block5174">
+                    资料分析&nbsp;（<a id="block_5174">0</a>/20）&nbsp;
+                </li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="sjlx" testid="">
+                <div id="top-top"></div>
+                <div class="conter active nav-content block5170">
+                    <div class="con">
+
+                        @RenderBody()
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="top-top clearfix"
+       id="btn-top" href="#paper/paper.html?action=paper&amp;paper_id=1163&amp;exam_item_id=27&amp;exam_id=16&amp;answer_type=simulate#top-top">
+        <span class="btn btn-next" id="btn-next">继　续</span>
+    </a>             <a class="top-top clearfix"
+                        id="btn-top">
+        <div class="btn upt" id="btn-submit" style="display: none;">交　卷</div>
+    </a>
+
+    <div class="number" style="display: none;">
+        <ul>
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>555</li>
+        </ul>
+    </div>
+
+
+    <div class="tooltip"></div>
+    <div class="box">
+        <div class="rest">
+            <div class="top clearfix">
+                <div class="left"></div>
+                <div class="right">休息一下...</div>
+            </div>
+            <div class="continue">继续做题</div>
+        </div>
+        <div class="hand_in">
+            <div class="top">正在结束作答</div>
+            <p class="mid">您还有<span>57</span>道试题未作答，是否确定交卷？</p>
+            <div class="bot">
+                <p class="sub confirm btn-submit" url="#paper/paper.html?action=getsavepaper&amp;paper_id=1163&amp;exam_item_id=27&amp;exam_id=16"
+                   report-url="#paper/report.html?action=explain_question&amp;exam_item_id=27&amp;exam_id=16&amp;report_type=simulate">
+                    <a>确认交卷</a>
+                </p>
+                <p class="thanks">谢谢提醒，继续</p>
+            </div>
+        </div>
+    </div>
+    <div title="回到顶部" id="rocket"></div>
+    <div class="footer">
+        <div class="copyright">
+            <div class="offcncopy layout">
+                copyright©2000-2017 北京中公教育科技股有限公司 .all
+                rights reserved<br>京icp备10218183号-41&nbsp;&nbsp;&nbsp;&nbsp;京公网安备11010802020664号
+            </div>
+        </div>
+    </div>
+    <div title="回到顶部" id="rocket"></div>
+    <script>
+        function keydownsearch() {
+            if (event.keycode == 13) {
+                event.returnvalue = false;
+                event.cancel = true;
+                $(".search_questions").click();
+            }
+        }
+    </script>
+</body>
+</html>

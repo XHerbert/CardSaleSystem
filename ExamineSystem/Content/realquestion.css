@@ -1,0 +1,212 @@
+/* CSS Document */
+.content{
+    background: #fff;
+    padding-bottom: 39px;
+    min-height: 756px;
+}
+.content .nav{
+    width: 100%;
+    height: 88px;
+    background:-webkit-gradient(linear, 0 0,100% 0 , from(#3964e7), to(#8586e3));
+    background:-moz-linear-gradient(left, #3964e7,#8586e3);
+    background: -ms-linear-gradient(left, #3964e7,#8586e3);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#3964e7,endColorstr=#8586e3,grandientType=1);
+}
+
+.content .nav .common .home{
+    font-size: 12px;
+    color: #fff;
+    line-height: 50px;
+}
+
+.content .nav .common .home a{
+    color: #fff;
+}
+
+.content .nav .common .h2 .h2_p{
+    font-size: 22px;
+    color: #fff;
+    font-weight: normal;
+    float: left;
+}
+.content .nav .common .h2 .change_exam{
+    float: left;
+    margin-left: 15px;
+    position: relative;
+}
+
+.content .nav .common .h2 .change_exam .c_e_p{
+    width: 90px;
+    height: 28px;
+    border-radius: 20px;
+    background: #ffea01;
+    color: #62626c;
+    font-size: 12px;
+    line-height: 28px;
+    text-align: center;
+    position: relative;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.content .nav .common .h2 .change_exam .c_e_p span{
+    position: absolute;
+    background:url(../../images/change_down.png) no-repeat top center;
+    width: 11px;
+    height: 6px;
+    display: block;
+    top:13px;
+    right:12px;
+}
+
+
+.copyRight,.offcnCopy{background: #333; }
+.offcnCopy{ padding:20px 0 13px 0; line-height:32px; color:#fff; text-align:center;font-size: 16px;}
+.offcnCopy a{ color:#fff; font-size: 16px;}
+.offcnCopy a:hover{ color:#e00;}
+
+.pra_con{
+    width:998px;
+    margin: 0 auto;
+    border:1px solid #ddd;
+    margin-top: 40px;
+}
+
+
+.tag{background: #f9f9f9; height: 44px;border-bottom: 1px solid #f2f2f2;margin-bottom: 14px;}
+
+.tag ul{
+    float: left;
+}
+
+.tag .hot{
+    float: right;
+    padding-left: 20px;
+    background:url(../../images/first/fire.png) no-repeat left center;
+    font-size: 14px;
+    color: #c3c3c3;
+    line-height: 44px;
+}
+
+
+
+.tag ul li{line-height: 44px; margin:0 20px;font-family:'Microsoft Yahei';float: left;}
+.tag ul li a{
+    color: #333333; font-size: 17px;
+}
+.tag ul li.hover{ }
+
+.tag_c{
+    margin: 0 13px;
+    border-bottom: 1px solid #f4f4f4;
+    height:59px;
+    padding-top: 21px;
+}
+.tag_c .l{
+    padding-left: 19px;
+    position: relative;
+    color: #999;
+}
+.tag_c .l b{
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #878787;
+    position: absolute;
+    top: 10px;
+    left:6px;
+}
+
+
+.tag_c .l a{
+    font-size: 15px;
+    position: relative;
+}
+.tag_c .l span{
+    color: #999;
+    font-size: 13px;
+}
+.tag_c .l a .top{
+    position: absolute;
+    top: 0;
+    right: -55px;
+    display: block;
+    width: 45px;
+    height: 23px;
+    background: url(../../images/first/top.png) no-repeat top center;
+}
+
+.tag_c .r a{
+    display: block;
+    width: 90px;
+    height: 30px;
+    margin-left: 13px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    border:1px solid #4979e7;
+    color: #4979e7;
+    float: left;
+    border-radius: 20px;
+}
+
+.tag_c .r .redo{
+    width: 65px;
+    padding-right: 25px;
+    color: #f05050;
+    border: 1px solid #f05050;
+    position: relative;
+}
+.tag_c .r .redo span{
+    width: 18px;
+    height: 15px;
+    display: block;
+    background: url(../../images/first/re.png) no-repeat top center;
+    top:8px;
+    right:17px;
+    position: absolute;
+}
+.tag_c .r .redo .hover{
+    width:91px;
+    padding-right: 0;
+    color: #fff;
+    background: #f05050;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    display: none;
+    font-size: 12px;
+}
+.tag_c .r .redo:hover .hover{
+    display: block;
+}
+
+.tag_c .r .sky_blue{
+    color: #23b7e5;
+    border: 1px solid #23b7e5;
+}
+
+.tag_c .r .sky_blue:hover{
+    color: #fff;
+    background: #23b7e5;
+}
+
+.tag_c .r .blue{
+    color: #4979e7;
+    border: 1px solid #4979e7;
+}
+
+.tag_c .r .blue:hover{
+    color:#fff;
+    background: #4979e7;
+}
+
+.tag_c .r .gray{
+    color: #333;
+    border: 1px solid #e1e1e1;
+}
+
+.tag_c .r .gray:hover{
+    color: #fff;
+    background: #e1e1e1;
+}

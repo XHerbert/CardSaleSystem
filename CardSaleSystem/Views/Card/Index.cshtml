@@ -1,0 +1,326 @@
+﻿@model XHB.Card.Entity.CardSecretEntityExt
+@{
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+<style type="text/css">
+    /*a  upload */
+    .a-upload {
+        padding: 4px 10px;
+        height: 30px;
+        width: auto;
+        line-height: 20px;
+        position: relative;
+        cursor: pointer;
+        color: #888;
+        background: #fafafa;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow: hidden;
+        display: inline-block;
+        *display: inline;
+        *zoom: 1
+    }
+
+        .a-upload input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            cursor: pointer
+        }
+
+        .a-upload:hover {
+            color: #444;
+            background: #eee;
+            border-color: #ccc;
+            text-decoration: none
+        }
+</style>
+
+
+<!-- Tab panes -->
+<div class="tab-pane" id="char">
+    <div class="check-div">
+        @if ((bool)Session["_IsAdmin"])
+        {
+            <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addChar">导入卡密</button>
+        }
+        else
+        {
+            <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#buyCard">购买卡密</button>
+        }
+
+        <div class="col-xs-4">
+            <form action="/Card/GetSpecialCard" method="post">
+                <input type="text" class="form-control input-sm" name="querycard" placeholder="输入卡号\卡密搜索">
+                <button class="btn btn-white btn-xs " type="submit" id="qc">查 询 </button>
+            </form>
+        </div>
+        <div class="col-sm-1"><button class="btn btn-green btn-xs" id="used">已使用</button></div>
+        <div class="col-sm-1"><button class="btn btn-white btn-xs" id="unused">未使用</button></div>
+    </div>
+
+
+    <div class="data-div">
+        <div class="row tableHeader">
+            <div class="col-xs-1 ">
+                编号
+            </div>
+            <div class="col-xs-1">
+                卡号
+            </div>
+            <div class="col-xs-1">
+                卡密
+            </div>
+            <div class="col-xs-1">
+                是否使用
+            </div>
+            <div class="col-xs-1">
+                使用人
+            </div>
+            <div class="col-xs-1">
+                售卖状态
+            </div>
+            <div class="col-xs-1">
+                所属节目包
+            </div>
+            <div class="col-xs-2">
+                备注
+            </div>
+            <div class="col-xs-2">
+                导入时间
+            </div>
+            <div class="col-xs-1">
+                操作
+            </div>
+        </div>
+
+        @if (Request.IsAjaxRequest())
+        {
+            <div class="tablebody" id="tbc"></div>
+        }
+        else
+        {
+            <div class="tablebody">
+                @Html.Partial("/Views/Card/Partial/_PartialCardView.cshtml");
+            </div>
+        }
+
+
+
+
+        <!--页码块-->
+        <footer class="footer">
+            <ul class="pagination">
+                <li>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                    页
+                </li>
+                <li class="gray">
+                    共20页
+                </li>
+                <li>
+                    <i class="glyphicon glyphicon-menu-left">
+                    </i>
+                </li>
+                <li>
+                    <i class="glyphicon glyphicon-menu-right">
+                    </i>
+                </li>
+            </ul>
+        </footer>
+        <!--增加权限弹出窗口-->
+        <div class="modal fade" id="addChar" role="dialog" aria-labelledby="gridSystemModalLabel">
+            <div class="modal-dialog" role="document">
+                <form class="form-horizontal" method="post" enctype="multipart/form-data" action="/Card/Upload">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="gridSystemModalLabel">导入卡密</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+
+                                <div class="form-group ">
+                                    @*<label for="sName" class="col-xs-3 control-label">卡密文件：</label>
+                                        <div class="col-xs-6 ">
+                                            <input type="file" class="form-control input-sm duiqi" id="file" placeholder="请导入卡密文件">
+                                        </div>*@
+                                    <a href="javascript:void(0);" class="a-upload">
+                                        <input type="file" name="excel" id="excel" accept="application/vnd.ms-excel">点击这里上传文件
+                                    </a>
+                                </div>
+                                <div class="form-group">
+                                    <label for="userType" class="col-xs-3 control-label">选节目包：</label>
+                                    <div class="col-xs-8">
+                                        <select class=" form-control select-duiqi" name="CardId" id="cardId">
+                                            @foreach (var item in Model.ActTypeEntity)
+                                            {
+                                                <option value="@item.Id">@item.TypeName</option>
+                                            }
+                                            @*<option value="管理员">管理员</option>
+                                                <option value="代理">代理</option>
+                                                <option value="分销">分销</option>
+                                                <option value="档口">档口</option>*@
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                            <button type="submit" class="btn btn-xs btn-green">导 入</button>
+                        </div>
+                    </div>
+                </form>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!--查看详情弹出窗口-->
+        <div class="modal fade" id="changeChar" role="dialog" aria-labelledby="gridSystemModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="gridSystemModalLabel">修改权限</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <form class="form-horizontal">
+                                <div class="form-group ">
+                                    <label for="sName" class="col-xs-3 control-label">权限名：</label>
+                                    <div class="col-xs-6 ">
+                                        <input type="email" class="form-control input-sm duiqi" id="sName" value="@Model.CardSecretEntity.Where( p => p.Id== 1)" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sLink" class="col-xs-3 control-label">描述：</label>
+                                    <div class="col-xs-6 ">
+                                        <textarea class="form-control input-sm duiqi"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sOrd" class="col-xs-3 control-label">系统资源：</label>
+                                    <div class="col-xs-6">
+                                        <input type="file" class="form-control input-sm duiqi" id="sOrd" placeholder="">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                        <button type="button" class="btn btn-xs btn-green">保 存</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!--弹出删除权限警告窗口-->
+        <div class="modal fade" id="deleteChar" role="dialog" aria-labelledby="gridSystemModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="gridSystemModalLabel">提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            确定要删除该权限？删除后不可恢复！
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                        <button type="button" class="btn btn-xs btn-danger">保 存</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!--购买上家卡密-->
+        <div class="modal fade" id="buyCard" role="dialog" aria-labelledby="gridSystemModalLabel">
+            <div class="modal-dialog" role="document">
+                <form class="form-horizontal" method="post" action="/Card/BuyCard">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="gridSystemModalLabel">购买卡密</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="form-group">
+                                    <label for="userType" class="col-xs-4 control-label">选节目包：</label>
+                                    <div class="col-xs-8">
+                                        <select class=" form-control select-duiqi" name="cardId" id="cardId">
+                                            @foreach (var item in Model.ActTypeEntity)
+                                            {
+                                                <option value="@item.Id">@item.TypeName</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    @*<label for="count" class="col-xs-2 control-label">购买数量：</label>*@
+                                    <div class="col-xs-8">
+                                        <span>数量：<input type="number" class="form-control input-group select-duiqi" name="count" id="buyCount" /></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                            <button type="submit" class="btn btn-xs btn-green">购 买</button>
+                        </div>
+                    </div>
+                </form>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <!--已使用-->
+
+    </div>
+</div>
+<script type="text/javascript">
+    (function () {
+        
+        $("#used").on("click", function () {
+
+            window.location = "/Card/Used?use=true";
+            setTimeout(2000);
+            layer.alert("加载中...");
+        });
+
+        $("#unused").on("click", function () {
+
+            window.location = "/Card/Used?use=false";
+            setTimeout(2000);
+            layer.alert("加载中...");
+        });
+
+        //$("#qc").on("click", function () {
+        //    var no = $("input[name='querycard']").val();
+        //    window.location = "/Card/Used?use=true";
+        //});
+
+    })()
+</script>

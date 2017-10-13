@@ -1,0 +1,23 @@
+﻿@model List<ExamineSystem.Models.ExamModel.ExamEntity>
+@using ExamineSystem.Utils;
+<link rel="stylesheet" href="~/Content/realquestion.css"/>
+@foreach (var item in Model)
+{
+    <div class="tag_c">
+        <div class="l">
+            <b></b>
+            <a style="color:#555;" href="/ExamDetail/Index?examId=1">
+                @item.ExamTitle
+            </a>
+            <br><span>限时 @ConfigHelper.GetConfig("Expire") 分钟</span> | <span> @ConfigHelper.GetConfig("Count") 道题</span>
+        </div>
+        <div class="r clearfix">
+            <a data-time="120" data-id="@item.Id" class="toDoQuestion btn btn-startq blue" data_student="0" data_paper_student="0" href="/ExamDetail/Index?examId=@item.Id" target="_blank">
+                开始答题
+            </a>
+            <a class="btn btn-errorq gray" data_student="0" data_paper_student="0" data-url="/ExamDetail/Index?examId=@item.Id">未作答</a>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+}

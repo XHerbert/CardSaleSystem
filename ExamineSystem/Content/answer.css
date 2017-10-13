@@ -1,0 +1,660 @@
+.hide {
+	display: none;
+}
+.none {
+	display: none;
+}
+.content {
+	background: rgb(247, 247, 247); padding-top: 39px;
+}
+.content .nav {
+	background: -ms-linear-gradient(left, rgb(57, 100, 231), rgb(133, 134, 227)); width: 100%; height: 88px;
+}
+.content .nav .common .home {
+	color: rgb(255, 255, 255); line-height: 50px; font-size: 12px;
+}
+.content .nav .common .home a {
+	color: rgb(255, 255, 255);
+}
+.content .nav .common .h2 .h2_p {
+	background: url("../../images/answer/book.png") no-repeat 0px; color: rgb(255, 255, 255); padding-left: 34px; font-size: 20px; font-weight: normal; float: left;
+}
+.content .nav .common .h2 .time {
+	color: rgb(255, 255, 255); line-height: 32px; font-size: 14px; font-weight: normal; margin-left: 20px; float: right;
+}
+.copyRight {
+	background: rgb(51, 51, 51);
+}
+.offcnCopy {
+	background: rgb(51, 51, 51);
+}
+.offcnCopy {
+	padding: 20px 0px 13px; text-align: center; color: rgb(255, 255, 255); line-height: 32px; font-size: 16px;
+}
+.offcnCopy a {
+	color: rgb(255, 255, 255); font-size: 16px;
+}
+.offcnCopy a:hover {
+	color: rgb(238, 0, 0);
+}
+.main {
+	margin: 0px auto; width: 998px; padding-bottom: 20px;
+}
+.sjlx h1 {
+	background: rgb(118, 118, 118); height: 36px; color: rgb(255, 255, 255); line-height: 36px; padding-left: 18px; font-size: 16px; font-weight: normal;
+}
+.tag {
+	left: 0px; top: 0px; position: relative; z-index: 10;
+}
+.tag ul {
+	margin: 12px auto; width: 1000px;
+}
+.tag ul li {
+	background: rgb(199, 199, 199); border-radius: 20px; width: 182px; height: 36px; text-align: center; color: rgb(255, 255, 255); line-height: 36px; overflow: hidden; font-size: 14px; margin-right: 10px; margin-bottom: 10px; float: left; position: relative; cursor: pointer;
+}
+.tag ul .li2 {
+	width: 232px;
+}
+.tag ul .end {
+	margin-right: 0px;
+}
+.tag ul li.hover {
+	background: rgb(253, 141, 57);
+}
+.tag ul li.active {
+	background: rgb(253, 141, 57); color: rgb(255, 255, 255);
+}
+.sjlx .nav-content {
+	display: none;
+}
+.sjlx .nav-content.active {
+	display: block;
+}
+.conc {
+	background: rgb(249, 249, 249); margin: 0px auto 13px; border: 1px solid rgb(204, 204, 204); border-image: none; position: relative;
+}
+.conc .question {
+	background: rgb(249, 249, 251); padding: 11px 0px 11px 19px; color: rgb(51, 51, 51); line-height: 30px; font-size: 13px;
+}
+.question span {
+	color: rgb(70, 121, 228); font-family: "Microsoft Yahei";
+}
+.con .choose {
+	margin: 30px 0px;
+}
+.con .choose p {
+	color: rgb(102, 102, 102); line-height: 40px; padding-left: 29px; font-size: 13px; margin-right: 20px; margin-bottom: 10px; margin-left: 20px;
+}
+.abcd li {
+	background: rgb(238, 238, 238); border-radius: 2px; width: 30px; height: 34px; color: rgb(90, 90, 90); line-height: 34px; padding-left: 40px; font-size: 19px; margin-right: 20px; float: left; position: relative; cursor: pointer;
+}
+.abcd li em {
+	background: url("../../images/answer/choices.png") no-repeat; left: 17px; top: 10px; width: 14px; height: 14px; display: block; position: absolute;
+}
+.abcd li.active em {
+	background: url("../../images/answer/choices.png") 14px 0px;
+}
+.abcd li.hover em {
+	background: url("../../images/answer/choices.png") 14px 0px;
+}
+.abcd li:hover {
+	background: rgb(73, 121, 231); color: rgb(255, 255, 255);
+}
+.abcd li.active {
+	background: rgb(73, 121, 231); color: rgb(255, 255, 255);
+}
+.abcd li:hover em {
+	background: url("../../images/answer/choices.png") 14px 0px;
+}
+.conc p.house em {
+	background: url("../../images/answer/collect.png") no-repeat 0px; padding: 0px 6px;
+}
+.conc p.hover em.store {
+	background: url("../../images/answer/collect.png") no-repeat -16px;
+}
+.conc p em:hover {
+	background: url("../../images/answer/collect.png") no-repeat -16px; cursor: pointer;
+}
+.conc p.active em {
+	
+}
+.concs .abcd li em {
+	background: url("../../images/answer/tk_r26_c8.jpg") no-repeat;
+}
+.concs .abcd li.active em {
+	background: url("../../images/answer/tk_r26_c8.jpg") no-repeat -15px;
+}
+.concs .abcd li.hover em {
+	background: url("../../images/answer/tk_r26_c8.jpg") no-repeat -15px;
+}
+.number {
+	margin: 0px auto; width: 1000px; height: 76px; line-height: 76px; border-bottom-color: rgb(237, 237, 237); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.number ul {
+	margin: 0px auto; width: 210px;
+}
+.number ul li {
+	width: 42px; text-align: center; color: rgb(85, 85, 85); font-size: 16px; float: left;
+}
+.number ul li.current {
+	color: rgb(64, 184, 239);
+}
+.answer_con {
+	background: rgb(255, 255, 255); padding: 20px; border-top-color: rgb(72, 98, 175); border-top-width: 3px; border-top-style: solid; display: none;
+}
+.answer .top {
+	background: rgba(255, 255, 255, 0); height: 25px; margin-bottom: 5px;
+}
+.answer .top p {
+	background: rgb(72, 98, 175); margin: 0px auto; border-radius: 5px 5px 0px 0px; width: 164px; height: 34px; text-align: center; color: rgb(255, 255, 255); line-height: 32px; padding-right: 8px; font-size: 14px; cursor: pointer;
+}
+.answer_con ul {
+	width: 1000px;
+}
+.answer_con ul li {
+	width: 40px; height: 35px; text-align: center; color: rgb(255, 255, 255); margin-top: 8px; float: left;
+}
+.answer_con li.done p {
+	background: rgb(72, 97, 177) !important; color: rgb(255, 255, 255) !important;
+}
+.answer_con li.done p a {
+	color: rgb(255, 255, 255) !important;
+}
+.answer_con ul li p {
+	background: rgb(255, 255, 255); margin: 3px auto 0px; border-radius: 3px; border: 1px solid rgb(72, 97, 177); border-image: none; width: 30px; height: 30px; color: rgb(0, 129, 204); line-height: 30px;
+}
+.answer_con ul li p a {
+	color: rgb(72, 97, 177);
+}
+.remind {
+	background: rgb(0, 0, 0); left: 0px; top: 0px; width: 100%; height: 100%; display: none; position: fixed; z-index: 9; opacity: 0.8; -moz-opacity: .8; -khtml-opacity: .8;
+}
+.remind_con {
+	background: rgb(0, 160, 234); margin: -200px -250px; padding: 25px; border-radius: 25px; left: 50%; top: 50%; width: 450px; height: 350px; display: none; position: fixed; z-index: 10;
+}
+.remind_con p {
+	text-align: center; color: rgb(255, 255, 255); line-height: 50px; font-size: 24px; margin-bottom: 30px;
+}
+.remind_con p.closed {
+	text-align: right;
+}
+.closed img {
+	cursor: pointer;
+}
+.remind_con p span {
+	font-size: 50px;
+}
+.remind_con p.sub {
+	margin-top: 80px;
+}
+.remind_con p.sub a {
+	background: rgb(255, 255, 255); margin: 0px 30px; padding: 10px 20px; border-radius: 10px; color: rgb(0, 160, 233); font-size: 20px;
+}
+.fix {
+	background: url("../../images/answer/clock.jpg") no-repeat center 10px rgb(255, 255, 255); border-width: 2px 1px 1px; border-style: solid; border-color: rgb(73, 121, 231) rgb(221, 221, 221) rgb(221, 221, 221); border-image: none; left: 50%; top: 88px; width: 167px; text-align: center; color: rgb(51, 51, 51); padding-top: 65px; margin-left: 512px; position: fixed; z-index: 9;
+}
+.fix .clearfix .totalTime {
+	margin-right: 9px; margin-left: 31px;
+}
+.fix ul {
+	margin-top: 15px;
+}
+.fix ul li a {
+	background: rgb(242, 245, 250); margin: 0px auto 12px; border: 1px solid rgb(212, 211, 253); border-image: none; width: 137px; height: 45px; color: black; line-height: 45px; font-size: 14px; display: block;
+}
+.fix ul .pause:hover a {
+	border: 1px solid rgb(73, 121, 231); border-image: none; color: rgb(71, 122, 231);
+}
+.fix ul .nextanswer:hover a {
+	background: rgb(73, 121, 231); color: rgb(255, 255, 255);
+}
+.fix ul .study:hover a {
+	background: rgb(73, 121, 231); color: rgb(255, 255, 255);
+}
+.fix ul .ispause a {
+	background: rgb(73, 121, 231); color: rgb(255, 255, 255);
+}
+.fix ul .ispause:hover a {
+	background: rgb(66, 108, 206); color: rgb(255, 255, 255);
+}
+.fix ul .explain a {
+	background: rgb(133, 134, 227); color: rgb(255, 255, 255);
+}
+.fix ul .explain a:hover {
+	background: rgb(94, 104, 215);
+}
+.fix_bt {
+	background: rgb(255, 255, 255); padding: 12px 0px; margin-top: 10px;
+}
+.fix_bt a {
+	margin-right: 15px;
+}
+.answer.fixed {
+	left: 0px; right: 0px; bottom: 0px; position: fixed; z-index: 2;
+}
+p.house em.back {
+	background: url("../../images/answer/eject.png") no-repeat 1px;
+}
+.nav-label.fixed {
+	border-radius: 0px; border: 1px solid rgba(0, 160, 233, 0.45); border-image: none; top: -20px; width: 970px; padding-left: 30px; position: fixed; z-index: 9;
+}
+.oneq {
+	background: rgb(255, 255, 255); margin-bottom: 13px;
+}
+.house {
+	top: 11px; height: 12px; bottom: 30px; line-height: 12px; margin-right: 30px; float: right; position: relative;
+}
+.house a {
+	color: rgb(153, 153, 153); font-size: 12px;
+}
+.house:hover a {
+	color: rgb(255, 141, 59);
+}
+.pop {
+	top: 11px; height: 12px; line-height: 12px; padding-left: 22px; margin-right: 20px; float: right; position: relative;
+}
+.pop span {
+	background: url("../../images/answer/pop.png") no-repeat 0px 0px; left: 0px; top: 1px; width: 14px; height: 12px; display: block; position: absolute;
+}
+.pop a {
+	color: rgb(153, 153, 153); line-height: 12px; font-size: 12px;
+}
+.pop:hover a {
+	color: rgb(73, 121, 231);
+}
+.pop:hover span {
+	background: url("../../images/answer/pop.png") no-repeat -14px 0px;
+}
+.tag ul li span {
+	background: url("../../images/answer//tk_r17_c3.png") no-repeat; width: 20px; height: 13px; bottom: -10px; margin-left: -8px;
+}
+.main {
+	min-height: 1000px;
+}
+.con {
+	margin: 0px auto; width: 1000px; overflow: hidden; position: relative;
+}
+.main .conc.title {
+	border-bottom-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: solid; min-height: 300px; background-color: rgb(255, 255, 255);
+}
+.zlfx .conc {
+	border-radius: 0px; margin-bottom: 0px;
+}
+.conc {
+	background: rgb(255, 255, 255); padding-bottom: 35px;
+}
+.conc .conc {
+	margin-left: 2em;
+}
+.question {
+	font-size: 17px;
+}
+.choose p {
+	color: rgb(0, 129, 204); line-height: 35px; font-size: 16px; vertical-align: top;
+}
+.choose p span {
+	vertical-align: top; display: inline-block;
+}
+.choose p:hover {
+	background-color: rgb(239, 243, 255);
+}
+.remind_con p.sub {
+	
+}
+.remind_con p.closed {
+	margin-bottom: 10px;
+}
+li.nav-index a {
+	color: rgb(255, 255, 255);
+}
+.conc_temporary {
+	border-radius: 0px; margin-bottom: 0px;
+}
+div.choose p:hover {
+	cursor: pointer;
+}
+.answer.fixed {
+	left: 0px; right: 0px; bottom: 0px; position: fixed;
+}
+.abcd ul {
+	width: 60%; display: inline-block;
+}
+.material_span {
+	width: 2em; display: inline-block;
+}
+.cards-down {
+	width: 20px; height: 20px; margin-top: 6px; margin-left: -3px; position: absolute; background-image: url("http://static.ti.eoffcn.com/images/first/white.png"); background-size: cover;
+}
+.cards-down.up {
+	transform: rotate(180deg);
+}
+.remind_con .btn-submit.already {
+	background: rgb(180, 180, 180);
+}
+.tooltip {
+	background: rgb(0, 178, 111); padding: 5px; border-radius: 5px; left: 40%; top: 10%; height: 40px; color: white; line-height: 40px; display: none; position: fixed;
+}
+.choose img {
+	vertical-align: top; display: inline-block;
+}
+.upt {
+	background: rgb(0, 159, 233); border-color: rgb(229, 229, 229); margin: 0px auto; border-radius: 15px; width: 154px; text-align: center; color: white; line-height: 55px; font-size: 22px; display: none;
+}
+.qrcode {
+	display: inline-block; position: relative; cursor: pointer;
+}
+.big-qrcode {
+	top: -132px; width: 300px; height: 300px; right: 35px; overflow: hidden; display: none; position: absolute;
+}
+.qrcode:hover .big-qrcode {
+	display: inline-block;
+}
+.oneq .child {
+	margin-bottom: 0px;
+}
+.title-header {
+	background: rgb(0, 59, 89); width: 100%; height: 130px; text-align: center; color: rgb(255, 255, 255); font-size: 30px; font-weight: 700; border-top-color: rgb(0, 59, 89); border-bottom-color: rgb(0, 129, 204); border-top-width: 25px; border-bottom-width: 8px; border-top-style: solid; border-bottom-style: solid; box-sizing: border-box;
+}
+.title-header p a {
+	color: rgb(255, 255, 255);
+}
+.title-header .crumb {
+	margin: 0px auto; width: 1000px; text-align: left; display: inline-block;
+}
+.title-header h2 {
+	clear: both; font-size: 30px; font-weight: 700; margin-bottom: 10px;
+}
+.title-header p {
+	font-size: 16px; font-weight: 500;
+}
+.title-header p b {
+	color: rgb(252, 255, 0); font-weight: 500;
+}
+.title-header p span {
+	color: rgb(252, 255, 0); font-size: 16px; font-weight: 700; margin-left: 20px; display: inline-block;
+}
+.fix ul .submit a {
+	border: currentColor; border-image: none;
+}
+.fix ul .submit .right_submit {
+	background: rgb(242, 79, 82); border: currentColor; border-image: none; width: 139px; height: 47px; color: rgb(255, 255, 255); font-size: 14px;
+}
+.fix ul .submit .right_submit:hover {
+	background: rgb(217, 71, 74);
+}
+.screen {
+	left: 0px; top: 0px; right: 0px; bottom: 0px; z-index: 999;
+}
+.mask {
+	display: none; position: fixed; background-color: rgba(0, 0, 0, 0.77);
+}
+.mask .wrap {
+	background: rgb(0, 129, 204); margin: auto; border-radius: 5px; position: absolute;
+}
+.pop1 {
+	width: 477px; height: 288px;
+}
+.pop1 .icon {
+	margin: 35px auto 50px; width: 88px; height: 86px;
+}
+.pop1 .cry {
+	background-image: url("../../images/answer/first/41.png");
+}
+.pop1 .text {
+	margin: 30px auto; width: 325px; color: white;
+}
+.text.big {
+	text-align: center; font-size: 24px; font-weight: bold; margin-top: 80px;
+}
+.btns {
+	margin: 50px auto; text-align: center;
+}
+.btns .btn {
+	margin: 0px 15px; border-radius: 3px; border: 1px solid white; border-image: none; width: 110px; height: 40px; color: white; line-height: 40px; font-size: 18px; font-weight: bold; display: inline-block;
+}
+.pop1 .btn:hover {
+	cursor: pointer; box-shadow: inset 0px 0px 20px 0px; text-shadow: 0px 0px 10px white;
+}
+.pop2 .btn:hover {
+	cursor: pointer; box-shadow: inset 0px 0px 20px 0px; text-shadow: 0px 0px 10px white;
+}
+.mask .submit {
+	background: rgb(0, 129, 204);
+}
+.wrap .close {
+	border-radius: 18px; border: 2px solid white; border-image: none; top: 10px; width: 16px; height: 16px; text-align: center; right: 10px; color: white; line-height: 16px; font-size: 10px; font-weight: bold; position: absolute; cursor: pointer;
+}
+.abcd ul {
+	width: 60%; margin-left: 49px; display: inline-block;
+}
+.choose img {
+	vertical-align: top; display: inline-block;
+}
+.qrcode {
+	display: inline-block; position: relative; cursor: pointer;
+}
+.big-qrcode {
+	top: -132px; width: 300px; height: 300px; right: 35px; overflow: hidden; display: none; position: absolute;
+}
+.qrcode:hover .big-qrcode {
+	display: inline-block;
+}
+.material_span {
+	width: 2em; display: inline-block;
+}
+.questions_submit {
+	background: rgb(242, 79, 82); margin: 0px auto; border-radius: 25px; border: currentColor; border-image: none; width: 156px; text-align: center; color: white; line-height: 48px; font-size: 22px; display: block; cursor: pointer;
+}
+.questions_submit:hover {
+	background: rgb(217, 71, 74);
+}
+.no_questions {
+	width: 100%; height: 500px; text-align: center; line-height: 500px; font-size: 30px;
+}
+.tooltip {
+	background: rgb(0, 178, 111); padding: 5px; border-radius: 5px; left: 40%; top: 10%; height: 40px; color: white; line-height: 40px; display: none; position: fixed;
+}
+.box {
+	background: rgba(0, 0, 0, 0.3); left: 0px; top: 0px; width: 100%; height: 100%; display: none; position: fixed; z-index: 10;
+}
+.box .rest {
+	background: rgb(255, 255, 255); border-radius: 3px; left: 50%; top: 50%; width: 452px; height: 254px; margin-top: -127px; margin-left: -226px; display: none; position: absolute;
+}
+.box .rest .top {
+	margin: 47px auto 50px; width: 182px; height: 69px;
+}
+.box .rest .top .left {
+	background: url("../images/coffee.png") no-repeat top; width: 63px; height: 69px; margin-right: 24px; float: left;
+}
+.box .rest .top .right {
+	color: rgb(102, 102, 102); font-size: 18px; margin-top: 34px; float: left;
+}
+.box .rest .continue {
+	background: rgb(73, 121, 231); margin: 0px auto; border-radius: 3px; width: 145px; height: 46px; text-align: center; color: rgb(255, 255, 255); line-height: 46px; cursor: pointer;
+}
+.box .rest .continue:hover {
+	background: rgb(66, 108, 206);
+}
+.box .hand_in {
+	background: rgb(255, 255, 255); border-radius: 3px; left: 50%; top: 50%; width: 452px; height: 254px; margin-top: -127px; margin-left: -226px; display: none; position: absolute;
+}
+.box .hand_in .top {
+	background: rgb(248, 248, 248); height: 46px; color: rgb(102, 102, 102); line-height: 46px; padding-left: 20px; font-size: 15px; border-bottom-color: rgb(238, 238, 238); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.box .hand_in .mid {
+	height: 18px; text-align: center; color: rgb(51, 51, 51); line-height: 18px; font-size: 18px; margin-top: 51px; margin-bottom: 45px;
+}
+.box .hand_in .mid span {
+	color: rgb(73, 121, 231); font-weight: bold;
+}
+.box .hand_in .bot {
+	margin: 0px auto; width: 330px;
+}
+.box .hand_in .bot p {
+	margin: 0px 10px; border-radius: 3px; width: 143px; height: 44px; cursor: pointer;
+}
+.box .hand_in .bot .confirm {
+	background: rgb(73, 121, 231); border: 1px solid rgb(73, 121, 231); border-image: none; text-align: center; color: rgb(255, 255, 255); line-height: 44px; float: left;
+}
+.box .hand_in .bot .confirm:hover {
+	background: rgb(85, 133, 244);
+}
+.box .hand_in .bot .thanks {
+	background: rgb(246, 246, 246); border: 1px solid rgb(215, 215, 215); border-image: none; text-align: center; line-height: 44px; float: left;
+}
+.box .hand_in .bot .thanks:hover {
+	background: rgb(235, 231, 232);
+}
+.block5913 .con .conc > p {
+	float: left;
+}
+.block5913 .con .conc > ul {
+	float: left;
+}
+.main .conc.title .top {
+	background: rgb(249, 249, 251); height: 52px; color: rgb(51, 51, 51); line-height: 52px; padding-left: 19px; font-size: 14px;
+}
+.main .conc.title .top p {
+	margin-right: 10px; float: left;
+}
+.main .conc.title .top p .blue {
+	color: rgb(73, 121, 231); font-style: normal;
+}
+.main .conc.title .top ul {
+	margin-top: 11px; float: left;
+}
+.main .conc.title .top ul li {
+	background: rgb(73, 98, 178); width: 30px; height: 30px; text-align: center; line-height: 30px; margin-right: 10px; float: left;
+}
+.question_material {
+	padding: 22px 27px 0px; color: rgb(102, 102, 102); line-height: 30px; text-indent: 2em; overflow: auto; font-size: 14px; max-height: 306px;
+}
+.top-top .btn {
+	background: rgb(73, 121, 231); margin: 0px auto; border-radius: 25px; border: currentColor; border-image: none; width: 156px; text-align: center; color: white; line-height: 48px; font-size: 20px; display: block; cursor: pointer;
+}
+.top-top .btn:hover {
+	background: rgb(38, 92, 215);
+}
+.top-top .upt {
+	background: rgb(242, 79, 82);
+}
+.top-top .upt:hover {
+	background: rgb(217, 71, 74);
+}
+.fix .slide_p {
+	text-align: center; padding-bottom: 17px;
+}
+.fix .slide_p a {
+	color: rgb(102, 102, 102); padding-left: 21px; font-size: 14px; position: relative;
+}
+.fix .slide_p a span {
+	background: url("../../images/shouqi.png") no-repeat 0px 0px; left: 0px; top: 5px; width: 14px; height: 10px; display: block; position: absolute;
+}
+.fix .slide_p a:hover {
+	color: rgb(238, 0, 0);
+}
+.fix .slide_p a .on {
+	background: url("../../images/zhankai.png") no-repeat 0px 0px;
+}
+.login_fix .login {
+	background: rgb(255, 255, 255); border-radius: 3px; left: 50%; top: 50%; width: 512px; height: 292px; margin-top: -145px; margin-left: -256px; border-bottom-color: rgb(90, 114, 230); border-bottom-width: 5px; border-bottom-style: solid; position: absolute;
+}
+.login_fix .login .tip {
+	background: rgb(251, 251, 139); width: 335px; height: 24px; color: rgb(242, 79, 80);
+}
+.login_fix .login .close {
+	background: url("../../images/gf/list/close.jpg") no-repeat top; top: 5px; width: 28px; height: 28px; right: 5px; display: block; position: absolute; cursor: pointer;
+}
+.login_fix .login .tip {
+	margin: 40px auto 21px; height: 24px; text-align: center; color: rgb(240, 80, 80); line-height: 24px; font-size: 14px; position: relative;
+}
+.login_fix .login .txt {
+	margin: 0px auto 11px; width: 365px;
+}
+.login_fix .login .btn_login {
+	background: url("../../images/gf/list/begin.png") no-repeat top; margin: 0px auto 18px; width: 143px; height: 42px; text-align: center; color: rgb(255, 255, 255); line-height: 42px; display: block;
+}
+.login_fix .login .have {
+	text-align: center;
+}
+.login_fix .login .have a {
+	text-align: center; font-size: 12px; text-decoration: underline;
+}
+.login_fix .login .tip span {
+	background: url("../../images/gf/list/warn.jpg") no-repeat top; left: 28px; top: 0px; width: 13px; height: 24px; display: block; position: absolute;
+}
+.login_fix {
+	left: 0px; top: 0px; width: 100%; height: 100%; position: fixed; z-index: 12;
+}
+.not_login_fix {
+	left: 0px; top: 0px; width: 100%; height: 100%; position: fixed; z-index: 12;
+}
+.login_fix .shadow {
+	background: rgb(0, 0, 0); left: 0px; top: 0px; width: 100%; height: 100%; position: absolute; opacity: 0.4;
+}
+.login_fix .begin {
+	background: rgb(255, 255, 255); border-radius: 3px; left: 50%; top: 50%; width: 512px; height: 285px; margin-top: -145px; margin-left: -256px; border-bottom-color: rgb(90, 114, 230); border-bottom-width: 5px; border-bottom-style: solid; position: absolute;
+}
+.login_fix .begin .tip {
+	text-align: center; color: rgb(240, 80, 80); font-size: 14px; margin-top: 45px; margin-bottom: 25px;
+}
+.login_fix .login .txt {
+	width: 337px; margin-bottom: 16px;
+}
+.login_fix .login .txt div {
+	height: 39px; margin-bottom: 14px; position: relative;
+}
+.login_fix .login .txt div input {
+	border: 1px solid rgb(204, 204, 204); border-image: none; width: 296px; height: 37px; color: rgb(153, 153, 153); padding-left: 38px;
+}
+.login_fix .login .txt .div1 .phone {
+	background: url("../../images/gf/list/phone.jpg") no-repeat top; left: 1px; top: 1px; width: 38px; height: 37px; display: block; position: absolute;
+}
+.login_fix .login .txt .div2 .message {
+	background: url("../../images/gf/list/message.jpg") no-repeat top; left: 1px; top: 1px; width: 38px; height: 37px; display: block; position: absolute;
+}
+.login_fix .login .txt .div1 .error {
+	top: 0px; width: 134px; height: 39px; right: 0px; color: rgb(240, 81, 77); line-height: 39px; font-size: 14px; display: none; position: absolute;
+}
+.login_fix .login .txt .wrong input {
+	border: 1px solid rgb(240, 81, 77); border-image: none;
+}
+.login_fix .login .txt .wrong .error {
+	display: block;
+}
+.login_fix .login .txt .div2 .button {
+	background: rgb(215, 215, 215); border: currentColor; border-image: none; top: 1px; width: 122px; height: 37px; text-align: center; right: 1px; color: rgb(102, 102, 102); padding-left: 0px; font-size: 14px; position: absolute;
+}
+.login_fix .send_code {
+	cursor: pointer;
+}
+.login_fix .begin .close {
+	background: url("../../images/gf/list/close.jpg") no-repeat top; top: 5px; width: 28px; height: 28px; right: 5px; display: block; position: absolute; cursor: pointer;
+}
+.not_login_fix {
+	left: 0px; top: 0px; width: 100%; height: 100%; position: fixed; z-index: 12;
+}
+.login_fix {
+	left: 0px; top: 0px; width: 100%; height: 100%; display: none; position: fixed; z-index: 12;
+}
+.login_fix .shadow {
+	background: rgb(0, 0, 0); left: 0px; top: 0px; width: 100%; height: 100%; position: absolute; opacity: 0.4;
+}
+.login_fix .begin {
+	background: rgb(255, 255, 255); border-radius: 3px; left: 50%; top: 50%; width: 512px; height: 285px; margin-top: -145px; margin-left: -256px; border-bottom-color: rgb(90, 114, 230); border-bottom-width: 5px; border-bottom-style: solid; position: absolute;
+}
+.login_fix .begin .tip {
+	text-align: center; color: rgb(240, 80, 80); font-size: 14px; margin-top: 45px; margin-bottom: 25px;
+}
+.next {
+	background: rgb(73, 121, 231);
+}
+.next:hover {
+	background: rgb(38, 92, 215);
+}
+.questions_submit {
+	margin-top: 10px;
+}
+.fix .tip {
+	background: rgb(251, 251, 139); width: 335px; height: 24px; color: rgb(242, 79, 80);
+}

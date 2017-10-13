@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div class="head">
+        <div class="common clearfix">
+            <div class="left clearfix">
+                <a href="#" class="logo left">
+                    <img src="./Img/logo.jpg" alt="">
+                </a>
+                <div class="app left">
+                    <p>APP</p>
+                    <span class="down_icon">
+                    </span>
+                    <div class="qr_code">
+                        <span class="triangle"></span>
+                        <a>手机扫码快速下载</a>
+                        <img src="./Img/qr_code.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+
+                <div class="more left" style="display: none;">
+                    <p class="p_m">更多</p>
+                    <span class="line"></span>
+                    <span class="down"></span>
+                    <div class="cp">
+                        <span class="triangle"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><div class="content">
+        <div class="nav">
+            <div class="common">
+                <p class="home"><a href="#">首页</a>&nbsp;&gt;&nbsp;实战模考</p>
+                <h2 class="h2 clearfix">
+                    <p class="h2_p">江西公务员考试-行测</p>
+                </h2>
+            </div>
+        </div>
+        <div class="con">
+            <div class="pra_con">
+                <div class="tag nav-label">
+                    <ul class="clearfix">
+                        <li nav-cmd="subject_block1" class="hover"><a>试卷列表</a></li>
+                    </ul>
+                    <p class="hot">试题火热更新中，敬请期待！</p>
+                    <div class="clear"></div>
+                </div>
+                @RenderBody()
+                <nav><ul class="pagination nub"><li class="disabled"><span aria-hidden="true">上一页</span></li><li class="active hover"><a href="#paper/realquestion.html?action=estimate&amp;exam_id=16&amp;exam_item_id=27&amp;paper_type=simulate_type#">1 <span class="sr-only" style="display:none;">当前页</span></a></li><li class="disabled"><span aria-hidden="true">下一页</span></li></ul></nav>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="copyRight">
+            <div class="offcnCopy layout">
+                Copyright©2000-2017 北京中公教育科技股有限公司 .All Rights Reserved<br>
+                京ICP备10218183号-41&nbsp;&nbsp;&nbsp;&nbsp;京公网安备11010802020664号
+            </div>
+        </div>
+    </div>
+    <div id="rocket" title="回到顶部"></div>
+</body>
+</html>

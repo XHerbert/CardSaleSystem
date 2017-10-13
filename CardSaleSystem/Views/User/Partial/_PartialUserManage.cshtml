@@ -1,0 +1,70 @@
+﻿
+
+@{ CardSaleSystem.Models.ExtModel.UserExt user = ViewBag.Data as CardSaleSystem.Models.ExtModel.UserExt;}
+@if (user.UsersEntity != null && user.UsersEntity.Count > 0)
+{
+    foreach (var item in user.UsersEntity)
+    {
+        <div class="row">
+            <div class="col-xs-1 ">
+                @item.UserCode
+            </div>
+            <div class="col-xs-1">
+                @item.UserName
+            </div>
+            @if (item.UserType == "1")
+            {
+                <div class="col-xs-1">
+                    管理员
+                </div>
+            }
+            else if (item.UserType == "2")
+            {
+                <div class="col-xs-1">
+                    代理
+                </div>
+            }
+            else if (item.UserType == "3")
+            {
+                <div class="col-xs-1">
+                    分销
+                </div>
+            }
+            else if (item.UserType == "4")
+            {
+                <div class="col-xs-1">
+                    档口
+                </div>
+            }
+            <div class="col-xs-1">
+                @item.CreateBy
+            </div>
+            <div class="col-xs-2">
+                @item.CreateTime
+            </div>
+
+            @if (item.IsActive == 1)
+            {
+                <div class="col-xs-1">
+                    启用
+                </div>
+            }
+            else
+            {
+                <div class="col-xs-1">
+                    禁用
+                </div>
+            }
+
+            <div class="col-xs-3">
+                @item.Memo
+            </div>
+            <div class="col-xs-2">
+                <button class="btn btn-success btn-xs" data-id="@item.Id" data-toggle="modal" data-target="#reviseUser">修改</button>
+                <button class="btn btn-danger btn-xs" data-id="@item.Id" data-toggle="modal" data-target="#deleteUser" id="udel" onclick="udel(@item.Id)">删除</button>
+            </div>
+        </div>
+    }
+}
+
+

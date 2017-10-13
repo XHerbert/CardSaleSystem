@@ -1,0 +1,340 @@
+﻿@using CardSaleSystem.Models.ExtModel;
+@model IList<ActPriceEntityExt>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+
+<div class="tab-pane" id="user">
+    <div class="check-div form-inline">
+        <div class="col-xs-3">
+            @if ((bool)Session["_IsAdmin"])
+            {
+                <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addUser">添加节目类型</button>
+            }
+            
+        </div>
+        <div class="col-xs-4">
+            <input type="text" class="form-control input-sm" placeholder="输入文字搜索">
+            <button class="btn btn-white btn-xs ">查 询 </button>
+        </div>
+    </div>
+    <div class="data-div">
+        <div class="row tableHeader">
+            <div class="col-xs-1">
+                节目类型编码
+            </div>
+            <div class="col-xs-1">
+                节目类型名称
+            </div>
+            <div class="col-xs-2">
+                节目类型描述
+            </div>
+            <div class="col-xs-1">
+                当前定价
+            </div>
+            <div class="col-xs-1">
+                上级定价
+            </div>
+            <div class="col-xs-3">
+                创建时间
+            </div>
+            <div class="col-xs-1">
+                状态
+            </div>
+            <div class="col-xs-2">
+                操作
+            </div>
+        </div>
+        <div class="tablebody">
+            @if (null != Model && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                    <div class="row">
+                        <div class="col-xs-1 ">
+                            @item.TypeCode
+                        </div>
+                        <div class="col-xs-1">
+                            @item.TypeName
+                        </div>
+                        <div class="col-xs-2">
+                            @item.Description
+                        </div>
+                        <div class="col-xs-1">
+                            @item.Price.ToString("0.00")
+                        </div>
+                        <div class="col-xs-1">
+                            @item.PrePrice.ToString("0.00")
+                        </div>
+                        <div class="col-xs-3">
+                            @item.CreateTime
+                        </div>
+
+                        @if (item.IsActive)
+                        {
+                            <div class="col-xs-1">
+                                启用
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-xs-1">
+                                禁用
+                            </div>
+                        }
+                        <div class="col-xs-2">
+                            <button class="btn btn-primary btn-xs" data-id="@item.Id" data-toggle="modal" @*data-target="#price"*@ onclick="price(@item.Id)">定价</button>
+                            <button class="btn btn-success btn-xs" data-id="@item.Id" data-toggle="modal" data-target="#reviseUser">修改</button>
+                            <button class="btn btn-danger btn-xs" data-id="@item.Id" data-toggle="modal" @*data-target="#deleteUser"*@ id="del" onclick="del(@item.Id)">删除</button>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div>暂无节目包</div>
+            }
+        </div>
+    </div>
+    <!--页码块-->
+    <footer class="footer">
+        <ul class="pagination">
+            <li>
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+                页
+            </li>
+            <li class="gray">
+                共20页
+            </li>
+            <li>
+                <i class="glyphicon glyphicon-menu-left">
+                </i>
+            </li>
+            <li>
+                <i class="glyphicon glyphicon-menu-right">
+                </i>
+            </li>
+        </ul>
+    </footer>
+    <!--弹出添加用户窗口-->
+    <div class="modal fade" id="addUser" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form class="form-horizontal" method="post" action="/CardType/CreateAct">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="gridSystemModalLabel">添加节目类型</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="form-group ">
+                                <label for="userCode" class="col-xs-3 control-label">类型编码：</label>
+                                <div class="col-xs-8 ">
+                                    <input type="text" class="form-control input-sm duiqi" name="TypeCode" id="typeCode" placeholder="请输入节目类型编码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="userName" class="col-xs-3 control-label">类型名称：</label>
+                                <div class="col-xs-8 ">
+                                    <input type="text" class="form-control input-sm duiqi" name="TypeName" id="typeName" placeholder="请输入节目类型名称">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="col-xs-3 control-label">类型描述：</label>
+                                <div class="col-xs-8">
+                                    <input type="tel" class="form-control input-sm duiqi" name="Description" id="description" placeholder="请输入节目类型描述">
+                                </div>
+                            </div>
+
+                            @*<div class="form-group">
+                                <label for="userType" class="col-xs-3 control-label">权限：</label>
+                                <div class="col-xs-8">
+                                    <select class=" form-control select-duiqi" name="UserType" id="userType">
+                                        <option value="管理员">管理员</option>
+                                        <option value="代理">代理</option>
+                                        <option value="分销">分销</option>
+                                        <option value="档口">档口</option>
+                                    </select>
+                                </div>
+                            </div>*@
+
+                            @*<div class="form-group">
+                                <label for="memo" class="col-xs-3 control-label">备注：</label>
+                                <div class="col-xs-8">
+                                    <input type="text" class="form-control input-sm duiqi" name="Memo" id="memo" placeholder="请输入备注">
+                                </div>
+                            </div>*@
+                            <div class="form-group">
+                                <label for="situation" class="col-xs-3 control-label">状态：</label>
+                                <div class="col-xs-8">
+                                    <label class="control-label" for="anniu">
+                                        <input type="radio" name="IsActive" id="normal" value="1" checked="checked">启用
+                                    </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <label class="control-label" for="meun">
+                                        <input type="radio" name="IsActive" id="forbid" value="0">禁用
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                        <button type="submit" class="btn btn-xs btn-green">提 交</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!--弹出修改用户窗口-->
+    <div class="modal fade" id="reviseUser" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">修改用户</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form class="form-horizontal">
+                            <div class="form-group ">
+                                <label for="sName" class="col-xs-3 control-label">用户名：</label>
+                                <div class="col-xs-8 ">
+                                    <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sLink" class="col-xs-3 control-label">真实姓名：</label>
+                                <div class="col-xs-8 ">
+                                    <input type="" class="form-control input-sm duiqi" id="sLink" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sOrd" class="col-xs-3 control-label">电子邮箱：</label>
+                                <div class="col-xs-8">
+                                    <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sKnot" class="col-xs-3 control-label">电话：</label>
+                                <div class="col-xs-8">
+                                    <input type="" class="form-control input-sm duiqi" id="sKnot" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sKnot" class="col-xs-3 control-label">地区：</label>
+                                <div class="col-xs-8">
+                                    <input type="" class="form-control input-sm duiqi" id="sKnot" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sKnot" class="col-xs-3 control-label">权限：</label>
+                                <div class="col-xs-8">
+                                    <input type="" class="form-control input-sm duiqi" id="sKnot" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="situation" class="col-xs-3 control-label">状态：</label>
+                                <div class="col-xs-8">
+                                    <label class="control-label" for="anniu">
+                                        <input type="radio" name="situation" id="normal">正常
+                                    </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <label class="control-label" for="meun">
+                                        <input type="radio" name="situation" id="forbid"> 禁用
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                    <button type="button" class="btn btn-xs btn-green">保 存</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!--弹出删除用户警告窗口-->
+    <div class="modal fade" id="deleteUser" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="post" action="/CardType/Delete">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="gridSystemModalLabel">提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="id" id="cid"/>
+                        <div class="container-fluid">
+                            确定要删除该用户？删除后不可恢复！
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                        <button type="submit" class="btn  btn-xs btn-danger" id="submitDel">删 除</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <div class="modal fade" id="price" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">定价</h4>
+                </div>
+                <form method="post" action="/CardType/MakePrice">
+                    <input type="hidden" name="cid" id="cardId" />
+                    <input type="hidden" name="cpid" id="typeId" />
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            请输入定价价格：<input type="number" value="" name="price" placeholder="请输入定价"/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                        <button type="submit" class="btn  btn-xs btn-danger" id="submit">提 交</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</div>
+
+
+<script type="text/javascript">
+    function del(id) {
+        $("#cid").val(id);
+        $('#deleteUser').modal('show');  
+    }
+
+    function price(id) {
+        $("#cardId").val(id);
+        $('#price').modal('show');  
+    }
+</script>
